@@ -155,6 +155,13 @@
 			iconAnchor:   [10, 10], // point of the icon which will correspond to marker's location
 			popupAnchor:  [0, -20]  // point from which the popup should open relative to the iconAnchor
 	});
+	
+	var QuestIcon = L.icon({
+			iconUrl: 'Quest-icon.png',
+			iconSize:     [40, 40], // size of the icon
+			iconAnchor:   [20, 20], // point of the icon which will correspond to marker's location
+			popupAnchor:  [0, -20]  // point from which the popup should open relative to the iconAnchor
+	});
 		
 	var TP1 = L.marker([457.0,1466.0],{icon: TPIcon});
 	TP1.bindPopup("<b>Relais : Rivages Venteux</b>");
@@ -176,22 +183,45 @@
 		
 	var TPLIST = L.layerGroup([TP1, TP2, TP3, TP4, TP5, TP6]);
 		
+	
+	
+	// Quests
+	var Q1 = L.marker([558.0,1232.0],{icon: QuestIcon});
+	Q1.bindPopup("<b>La peur de nos voisins</b>");
 		
+	var Q2 = L.marker([1163.0,733.0],{icon: QuestIcon});
+	Q2.bindPopup("<b>Lié à la mort</b>");
+		
+	var Q3 = L.marker([1430.0,982.0],{icon: QuestIcon});
+	Q3.bindPopup("<b>Plus souple que l'acier</b>");
+	
+	/*var Q4 = L.marker([892.0,1556.0],{icon: QuestIcon});
+	Q4.bindPopup("<b></b>");
+	
+	var Q5 = L.marker([1465.0,992.0],{icon: QuestIcon});
+	Q5.bindPopup("<b></b>");
+	
+	var Q6 = L.marker([1834.0,552.0],{icon: QuestIcon});
+	Q6.bindPopup("<b></b>");
+	
+	var Q7 = L.marker([1834.0,552.0],{icon: QuestIcon});
+	Q7.bindPopup("<b></b>");
+	
+	var Q8 = L.marker([1834.0,552.0],{icon: QuestIcon});
+	Q8.bindPopup("<b></b>");*/
+		
+	var QLIST = L.layerGroup([Q1, Q2, Q3/*, Q4, Q5, Q6, Q7, Q8*/]);
+	
+	
 		
 		
 	var map = L.map('map',{
 				maxZoom: 3,
 				minZoom: 1,
-				layers: [TPLIST],
+				layers: [TPLIST, QLIST],
 				crs: customCRS
 		}).setView([1050, 1050], 1);
 	
-    /*L.tileLayer('map/{z}/{x}/{y}.png', {
-      continuousWorld: false,
-      noWrap: true,  
-      minZoom: 0,
-      maxZoom: 10,
-    }).addTo(map);*/
 	
 	var DIMap = L.imageOverlay('stormpoint.png', [[-0, -0], [2650, 2000]], {} ).addTo(map);
 	
@@ -200,31 +230,15 @@
 	};
 	
 	var overlayMaps = {
-			"TP": TPLIST
-			//"Portals": titanPortals,
-			//"Grids": titanGrids
-			//"Levels": titanLevels
+			"TP": TPLIST,
+			"Quêtes": QLIST
+			//"Repères": RLIST
 	};
 		
 	L.control.layers(baseMaps, overlayMaps, {collapsed:false}).addTo(map);
 		
 	L.control.mousePosition().addTo(map);
 	
-	//titanGrids.setZIndex(200);
-	//titanPortals.setZIndex(300);
-	//titanCaves.setZIndex(400);
-	//titanLevels.setZIndex(500);
-	
-	//L.imageOverlay('stormpoint.jpg', [[-0, -0], [0, 0]], {} ).addTo(map);
-  //Coordinate Finder
-    /*var marker = L.marker([0, 0], {
-      draggable: true,
-    }).addTo(map);
-    marker.bindPopup('LatLng Marker').openPopup();
-    marker.on('dragend', function(e) {
-      marker.getPopup().setContent(marker.getLatLng().toString()).openOn(map);
-    });*/
-  //Markers
     </script>
   </body>
 </html>
