@@ -1,0 +1,22 @@
+
+.leaflet-label-overlay {
+	position: absolute;
+	text-align: center;
+	-webkit-transform: translate3d(0,0,0);
+}
+
+.leaflet-popup-close-button {
+	display:none;
+}
+
+/* .leaflet-label-overlay {
+	line-height:0px;
+	margin-top: 9px;
+	position:absolute;
+} */
+
+.text-labels {
+	font-size: 2em;
+	font-weight: 700;
+	/* Use color, background, set margins for offset, etc */
+}
