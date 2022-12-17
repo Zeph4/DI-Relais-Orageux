@@ -151,7 +151,7 @@
 
 	var PortalIcon = L.icon({
 			iconUrl: 'Portal-icon.png',
-			iconSize:     [20, 20], // size of the icon
+			iconSize:     [30, 30], // size of the icon
 			iconAnchor:   [10, 10], // point of the icon which will correspond to marker's location
 			popupAnchor:  [0, -20]  // point from which the popup should open relative to the iconAnchor
 	});
@@ -162,7 +162,22 @@
 			iconAnchor:   [20, 20], // point of the icon which will correspond to marker's location
 			popupAnchor:  [0, -20]  // point from which the popup should open relative to the iconAnchor
 	});
+	
+	var BossIcon = L.icon({
+			iconUrl: 'Boss-icon.png',
+			iconSize:     [40, 40], // size of the icon
+			iconAnchor:   [20, 20], // point of the icon which will correspond to marker's location
+			popupAnchor:  [0, -20]  // point from which the popup should open relative to the iconAnchor
+	});
+	
+	var ShrineIcon = L.icon({
+			iconUrl: 'Shrine-icon.png',
+			iconSize:     [24, 34], // size of the icon
+			iconAnchor:   [20, 20], // point of the icon which will correspond to marker's location
+			popupAnchor:  [0, -20]  // point from which the popup should open relative to the iconAnchor
+	});
 		
+	// TP
 	var TP1 = L.marker([457.0,1466.0],{icon: TPIcon});
 	TP1.bindPopup("<b>Relais : Rivages Venteux</b>");
 		
@@ -185,15 +200,46 @@
 		
 	
 	
+	
+	// Repères
+	var R1 = L.marker([430.0,1409.0],{icon: PortalIcon});
+	//R1.bindPopup("<b>Relais : Rivages Venteux</b>");
+		
+	var R2 = L.marker([630.0,1387.0],{icon: PortalIcon});
+	//R2.bindPopup("<b>Relais : Les cabanes</b>");
+		
+	var R3 = L.marker([745.0,1348.0],{icon: PortalIcon});
+	//R3.bindPopup("<b>Relais : Traversée de la barbacane</b>");
+	
+	var R4 = L.marker([872.0,1286.0],{icon: PortalIcon});
+	//R4.bindPopup("<b>Relais : Cimetière de bateaux</b>");
+	
+	var R5 = L.marker([850.0,1529.0],{icon: PortalIcon});
+	//R5.bindPopup("<b>Relais : Remparts du relais Orageux</b>");
+	
+	var R6 = L.marker([1006.0,1365.0],{icon: PortalIcon});
+	//R6.bindPopup("<b>Relais : Prison abandonnée </b>");
+	
+	var R7 = L.marker([1012.0,1070.0],{icon: PortalIcon});
+	//R7.bindPopup("<b>Relais : Prison abandonnée </b>");
+	
+	var R8 = L.marker([1315.0,963.0],{icon: PortalIcon});
+	//R8.bindPopup("<b>Relais : Prison abandonnée </b>");
+		
+	var RLIST = L.layerGroup([R1, R2, R3, R4, R5, R6, R7, R8]);
+	
+	
+	
+	
 	// Quests
 	var Q1 = L.marker([558.0,1232.0],{icon: QuestIcon});
-	Q1.bindPopup("<b>La peur de nos voisins</b>");
+	Q1.bindPopup("<b>[Dhalya] La peur de nos voisins</b>");
 		
 	var Q2 = L.marker([1163.0,733.0],{icon: QuestIcon});
 	Q2.bindPopup("<b>Lié à la mort</b>");
 		
 	var Q3 = L.marker([1430.0,982.0],{icon: QuestIcon});
-	Q3.bindPopup("<b>Plus souple que l'acier</b>");
+	Q3.bindPopup("<b>[Iwan] Plus souple que l'acier</b>");
 	
 	/*var Q4 = L.marker([892.0,1556.0],{icon: QuestIcon});
 	Q4.bindPopup("<b></b>");
@@ -213,12 +259,63 @@
 	var QLIST = L.layerGroup([Q1, Q2, Q3/*, Q4, Q5, Q6, Q7, Q8*/]);
 	
 	
+	
+	
+	
+	
+	// Shrines
+	var S1 = L.marker([333.0,1495.0],{icon: ShrineIcon});
+	//S1.bindPopup("<b></b>");
+		
+	var S2 = L.marker([530.0,1437.0],{icon: ShrineIcon});
+	//S2.bindPopup("<b></b>");
+		
+	var S3 = L.marker([680.0,1318.0],{icon: ShrineIcon});
+	//S3.bindPopup("<b></b>");
+	
+	var S4 = L.marker([958.0,1539.0],{icon: ShrineIcon});
+	//S4.bindPopup("<b></b>");
+	
+	var S5 = L.marker([1168.0,690.0],{icon: ShrineIcon});
+	//S5.bindPopup("<b></b>");
+	
+	var S6 = L.marker([1228.0,840.0],{icon: ShrineIcon});
+	//S6.bindPopup("<b></b>");
+	
+	var S7 = L.marker([1256.0,878.0],{icon: ShrineIcon});
+	//S7.bindPopup("<b></b>");
+	
+	//var S8 = L.marker([1834.0,552.0],{icon: ShrineIcon});
+	//S8.bindPopup("<b></b>");
+		
+	var SLIST = L.layerGroup([S1, S2, S3, S4, S5, S6, S7/*, S8*/]);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	// Boss
+	var B1 = L.marker([680.0,1328.0],{icon: BossIcon});
+	B1.bindPopup("<b>Aridax</b>");
+		
+	var B2 = L.marker([1148.0,687.0],{icon: BossIcon});
+	B2.bindPopup("<b>Gerzon Vayek</b>");
+		
+	//var B3 = L.marker([680.0,1322.0],{icon: BossIcon});
+	//B3.bindPopup("<b></b>");
+		
+	var BLIST = L.layerGroup([B1, B2/*, B3*/]);
+		
 		
 		
 	var map = L.map('map',{
 				maxZoom: 3,
 				minZoom: 1,
-				layers: [TPLIST, QLIST],
+				layers: [TPLIST, QLIST, RLIST, BLIST, SLIST],
 				crs: customCRS
 		}).setView([1050, 1050], 1);
 	
@@ -231,8 +328,10 @@
 	
 	var overlayMaps = {
 			"TP": TPLIST,
-			"Quêtes": QLIST
-			//"Repères": RLIST
+			"Quêtes": QLIST,
+			"Repères": RLIST,
+			"Boss": BLIST,
+			"Shrines": SLIST
 	};
 		
 	L.control.layers(baseMaps, overlayMaps, {collapsed:false}).addTo(map);
