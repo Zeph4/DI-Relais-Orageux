@@ -250,21 +250,21 @@
 		
 		// Quests
 		var Q1 = L.marker([558.0,1232.0],{icon: QuestIcon});
-		Q1.bindPopup("<b>[Dhalya] La peur de nos voisins</b>");
+		Q1.bindPopup("<b>8. [Dhalya] La peur de nos voisins</b>");
 		var Q2 = L.marker([1163.0,733.0],{icon: QuestIcon});
-		Q2.bindPopup("<b>6-Lié à la mort</b>");
+		Q2.bindPopup("<b>6. [Broos] Lié à la mort</b>");
 		var Q3 = L.marker([1430.0,982.0],{icon: QuestIcon});
-		Q3.bindPopup("<b>2-[Iwan] Plus souple que l'acier</b>");
+		Q3.bindPopup("<b>2. [Iwan] Plus souple que l'acier</b>");
 		var Q4 = L.marker([615.0,1331.0],{icon: QuestIcon});
-		Q4.bindPopup("<b>7-[Eudoxie] Serment à la Lumière</b>");
+		Q4.bindPopup("<b>7. [Eudoxie] Serment à la Lumière</b>");
 		var Q5 = L.marker([560.0,1570.0],{icon: QuestIcon});
-		Q5.bindPopup("<b>3-[Zeun] Un bref aperçu</b>");
+		Q5.bindPopup("<b>3. [Zeun] Un bref aperçu</b>");
 		var Q6 = L.marker([1322.0,700.0],{icon: QuestIcon});
-		Q6.bindPopup("<b>1-[Gerlach] Hôte bienveillant</b>");
+		Q6.bindPopup("<b>1. [Gerlach] Hôte bienveillant</b>");
 		var Q7 = L.marker([1504.0,873.0],{icon: QuestIcon});
-		Q7.bindPopup("<b>4-[Commandant Kenton] La famine des loups</b>");
+		Q7.bindPopup("<b>4. [Commandant Kenton] La famine des loups</b>");
 		var Q8 = L.marker([889.0,1390.0],{icon: QuestIcon});
-		Q8.bindPopup("<b>5-Perdu dans les marais (Rare!)</b>");
+		Q8.bindPopup("<b>5. [Kiki] Perdu dans les marais (Rare!)</b>");
 		
 		var QLIST = L.layerGroup([Q1, Q2, Q3, Q4, Q5, Q6, Q7, Q8]);
 		
@@ -328,8 +328,12 @@
 		Be15.bindPopup("<b>Vierge de fer</b><br>Chance d'apparition:<br>Carcasse défigurée<br>(Codex Exploration)");
 		var Be16 = L.marker([1800.0,834.0],{icon: BellIcon});
 		Be16.bindPopup("<b>Vierge de fer</b><br>Chance d'apparition:<br>Carcasse défigurée<br>(Codex Exploration)");
+		var Be17 = L.marker([1793.0,789.0],{icon: BellIcon});
+		Be17.bindPopup("<b>Vierge de fer</b><br>Chance d'apparition:<br>Carcasse défigurée<br>(Codex Exploration)");
+		
+		
 
-		var BeLIST = L.layerGroup([Be1, Be2, Be3, Be4, Be5, Be6, Be7, Be8, Be9, Be10, Be11, Be12, Be13, Be14, Be15, Be16]);
+		var BeLIST = L.layerGroup([Be1, Be2, Be3, Be4, Be5, Be6, Be7, Be8, Be9, Be10, Be11, Be12, Be13, Be14, Be15, Be16, Be17]);
 			
 		var map = L.map('map',{
 					maxZoom: 3,
